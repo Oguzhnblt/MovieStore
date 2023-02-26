@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace Persistence.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : class, new()
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly MovieContext _context;
 

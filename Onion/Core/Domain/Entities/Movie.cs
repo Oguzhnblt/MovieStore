@@ -10,9 +10,11 @@
 
         public Genre? MovieGenre { get; set; }
 
-        public ICollection<Actor>? Actor { get; set; }
+        public List<Actor>? Actor { get; set; }
 
         public Director? Director { get; set; }
+
+        public List<Customer>? Customers { get; set; }
 
         public decimal MoviePrice { get; set; }
 

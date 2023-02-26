@@ -7,6 +7,6 @@
 
         public string DirectorSurname { get; set; }
 
-        public ICollection<Movie>? MoviesDirected { get; set; }
+        public List<Movie>? MoviesDirected { get; set; }
     }
 }

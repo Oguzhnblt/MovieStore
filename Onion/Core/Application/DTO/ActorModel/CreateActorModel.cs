@@ -1,10 +1,10 @@
-﻿using System;
-namespace Application.DTO.ActorDTOModel
+﻿namespace Application.DTO.ActorModel
 {
-	public class UpdateActorDTO
-	{
+    public class CreateActorModel
+    {
+
         public string ActorName { get; set; }
         public string ActorSurname { get; set; }
     }
-}
 
+}

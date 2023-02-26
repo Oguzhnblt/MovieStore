@@ -8,7 +8,7 @@
 
         public string ActorSurname { get; set; }
 
-        public ICollection<Movie>? Movies { get; set; }
+        public List<Movie>? Movies { get; set; }
 
     }
 

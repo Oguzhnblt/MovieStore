@@ -10,8 +10,8 @@ namespace Application
     {
         public static void AddApplicationServices(this IServiceCollection services)
         {
-            var assm = Assembly.GetExecutingAssembly();
-            //services.AddMediatR();
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+
             services.AddAutoMapper(opt =>
             {
                 opt.AddProfiles(new List<Profile>

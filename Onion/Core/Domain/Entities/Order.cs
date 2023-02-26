@@ -8,7 +8,7 @@
 
         public int CustomerID { get; set; }
 
-        public ICollection<Movie>? PurchasedMovie { get; set; }
+        public List<Movie>? PurchasedMovie { get; set; }
 
         public int MovieID { get; set; }
 

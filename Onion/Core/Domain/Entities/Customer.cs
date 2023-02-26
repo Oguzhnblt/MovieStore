@@ -10,11 +10,11 @@
 
 
 
-        public ICollection<Movie>? PurchasedMovies { get; set; }
+        public List<Movie>? PurchasedMovies { get; set; }
 
-        public ICollection<Genre>? FavoriteGenres { get; set; }
+        public List<Genre>? FavoriteGenres { get; set; }
 
-        public ICollection<Order>? Orders { get; set; }
+        public List<Order>? Orders { get; set; }
 
 
     }

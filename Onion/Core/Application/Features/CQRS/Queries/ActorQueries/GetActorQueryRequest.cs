@@ -1,10 +1,9 @@
-﻿using System;
-using Application.DTO.ActorDTOModel;
+﻿using Application.DTO.ActorDTOModel;
 using MediatR;
 
 namespace Application.Features.CQRS.Queries.ActorQueries
 {
-    public class GetActorQueryRequest : IRequest<ActorDTO>
+    public class GetActorQueryRequest : IRequest<ActorViewModel>
     {
         public int ID { get; set; }
 

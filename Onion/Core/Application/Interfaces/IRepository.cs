@@ -2,7 +2,7 @@
 
 namespace Application.Interfaces
 {
-    public interface IRepository<T> where T : class, new()
+    public interface IRepository<T> where T : class
     {
         Task<List<T>> GetAllAsync();
 

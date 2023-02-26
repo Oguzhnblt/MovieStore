@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Application.Features.CQRS.Handler.ActorHandler
 {
-    public class GetActorQueryHandler : IRequestHandler<GetActorQueryRequest, ActorDTO>
+    public class GetActorQueryHandler : IRequestHandler<GetActorQueryRequest, ActorViewModel>
     {
         private readonly IRepository<Actor> _repository;
         private readonly IMapper _mapper;
@@ -18,11 +18,11 @@ namespace Application.Features.CQRS.Handler.ActorHandler
             _mapper = mapper;
         }
 
-        public async Task<ActorDTO> Handle(GetActorQueryRequest request, CancellationToken cancellationToken)
+        public async Task<ActorViewModel> Handle(GetActorQueryRequest request, CancellationToken cancellationToken)
         {
             var actor = await _repository.GetByFilterAsync(x => x.ActorID == request.ID);
 
-            return _mapper.Map<ActorDTO>(actor);
+            return _mapper.Map<ActorViewModel>(actor);
         }
     }
 }
