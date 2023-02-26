@@ -10,9 +10,6 @@ namespace Persistence.Configuration
         {
             builder.HasKey(m => m.MovieID);
             builder.Property(m => m.MovieName).HasMaxLength(100);
-            builder.HasOne(m => m.MovieGenre).WithMany().HasForeignKey(m => m.GenreID);
-            builder.HasOne(m => m.Director).WithMany(d => d.MoviesDirected).HasForeignKey(m => m.DirectorID);
-            builder.HasMany(m => m.Actor).WithMany(a => a.Movies).UsingEntity(j => j.ToTable("MovieActor"));
             builder.Property(m => m.MoviePrice).HasColumnType("decimal(18,2)");
             builder.Property(m => m.IsDeleted).HasDefaultValue(false);
         }

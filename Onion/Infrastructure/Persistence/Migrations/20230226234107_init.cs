@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -81,7 +80,7 @@ namespace Persistence.Migrations
                     CustomerID = table.Column<int>(type: "int", nullable: false),
                     MovieID = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PurchasedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    PurchasedDate = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -103,7 +102,7 @@ namespace Persistence.Migrations
                     MovieName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     MovieYear = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MoviePrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
                     CustomerID = table.Column<int>(type: "int", nullable: false),
                     ActorID = table.Column<int>(type: "int", nullable: false),
                     DirectorID = table.Column<int>(type: "int", nullable: false),

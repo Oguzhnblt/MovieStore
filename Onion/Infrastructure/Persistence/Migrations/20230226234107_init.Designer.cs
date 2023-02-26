@@ -12,7 +12,7 @@ using Persistence.Context;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20230226232318_init")]
+    [Migration("20230226234107_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -75,7 +75,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("ActorID");
 
-                    b.ToTable("Actors");
+                    b.ToTable("Actors", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Customer", b =>
@@ -98,7 +98,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("CustomerID");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Director", b =>
@@ -121,7 +121,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("DirectorID");
 
-                    b.ToTable("Directors");
+                    b.ToTable("Directors", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Genre", b =>
@@ -144,7 +144,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genres", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Movie", b =>
@@ -168,7 +168,9 @@ namespace Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("MovieName")
                         .IsRequired()
@@ -213,13 +215,13 @@ namespace Persistence.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("PurchasedDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.HasKey("OrderID");
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("ActorMovie", b =>
