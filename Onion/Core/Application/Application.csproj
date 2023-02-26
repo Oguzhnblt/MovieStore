@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DTO\" />
+    <Folder Include="Features\" />
+    <Folder Include="Tools\" />
+    <Folder Include="DTO\ActorDTOModel\" />
+    <Folder Include="DTO\CustomerDTOModel\" />
+    <Folder Include="Features\CQRS\" />
+    <Folder Include="Features\CQRS\Commands\" />
+    <Folder Include="Features\CQRS\Queries\" />
+    <Folder Include="Features\CQRS\Handler\" />
+    <Folder Include="Features\CQRS\Queries\ActorQueries\" />
+    <Folder Include="Features\CQRS\Handler\ActorHandler\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="MediatR.Extensions.FluentValidation.AspNetCore" Version="4.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DTO\ActorDTOModel\" />
+    <None Remove="DTO\CustomerDTOModel\" />
+    <None Remove="Features\CQRS\" />
+    <None Remove="Features\CQRS\Commands\" />
+    <None Remove="Features\CQRS\Queries\" />
+    <None Remove="Features\CQRS\Handler\" />
+    <None Remove="Features\CQRS\Queries\ActorQueries\" />
+    <None Remove="Features\CQRS\Handler\ActorHandler\" />
+  </ItemGroup>
+</Project>
